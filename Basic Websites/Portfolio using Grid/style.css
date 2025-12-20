@@ -1,0 +1,49 @@
+section
+{
+    color: white;
+    background: #000;
+    padding: 1em;
+}
+#content
+{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 10fr 1fr;
+    gap: 1em;
+}
+
+
+header
+{
+    text-align: center;
+    font-size: x-large;
+    background: rgb(2, 255, 255);
+    color:white;
+}
+
+footer
+{
+    text-align: center;
+    color: white;
+}
+
+body
+{
+    background-color: aqua;
+}
+
+
+.educationAndSkills
+{
+    display: grid;
+    grid-column: 2/3;
+    grid-row-start:1;
+    grid-row-end:3;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+.photo
+{
+    background-color:white
+}
