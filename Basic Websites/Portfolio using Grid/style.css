@@ -1,49 +1,106 @@
 section
 {
     color: white;
-    background: #000;
+    background: black;
     padding: 1em;
 }
 #content
 {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 10fr 1fr;
-    gap: 1em;
+    grid-template-columns: 16rem 2fr;
+    grid-template-rows: 3fr 2fr;
+    gap: 2em;
+    margin: 2rem 0;
 }
 
 
 header
 {
+    padding: 3rem 1rem;
     text-align: center;
     font-size: x-large;
-    background: rgb(2, 255, 255);
-    color:white;
+    background: black;
+    color: white;
+    border-radius: 0.25rem;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
 }
 
 footer
 {
+    border-top: 2px solid aqua;
+    padding: 3rem 1rem;
     text-align: center;
     color: white;
+
 }
 
 body
 {
-    background-color: aqua;
+    background-color: black;
 }
 
+h1
+{
+    color:aqua;
+    text-decoration: underline white;
+}
+h2
+{
+    color:aqua;
+    text-decoration: underline white;
+}
+p
+{
+    color: white;
+
+}
 
 .educationAndSkills
 {
+    
     display: grid;
     grid-column: 2/3;
     grid-row-start:1;
     grid-row-end:3;
     grid-template-columns: 1fr 1fr;
     gap: 1em;
+    
+}
+.education 
+{
+    border-radius: 0.5rem;
+    border-right: 2px  white double;
+    border-bottom: 2px  aqua solid;
+}
+.skills
+{
+    border-radius: 0.5rem;
+    border-right: 2px  white double;
+    border-bottom: 2px  aqua solid;
+}
+.bio
+{
+    border-radius: 0.5rem;
+    border:2px solid white;
 }
 
 .photo
 {
-    background-color:white
+    background-color:white;
+    border-radius : 0.5rem;
+}
+
+@media (max-width: 768px) {
+    #content 
+    {
+        grid-template-columns: 16rem 1fr; 
+    }
+
+
+    .educationAndSkills 
+    {
+        grid-template-columns: 1fr; 
+        gap: 1.5rem;
+    }
 }
