@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Blog System</title>
+    <style>
+        body { font-family: sans-serif; margin: 40px; line-height: 1.6; }
+        .post { border-bottom: 1px solid #ccc; padding: 10px 0; }
+        form { background: #f4f4f4; padding: 20px; border-radius: 8px; margin-bottom: 30px; }
+        button { background: green; color: white; padding: 10px; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>Blog Management System</h1>
+
+    <form method="POST">
+        {% csrf_token %} <h3>Create a New Post</h3>
+        {{ form.as_p }} <button type="submit">Publish Post</button>
+    </form>
+
+    <hr>
+
+    <h2>Recent Posts</h2>
+    {% for blog in blogs %}
+        <div class="post">
+            <h3>{{ blog.title }}</h3>
+            <a href="{% url 'read_one' blog.id %}">View Details</a> | 
+            <a href="{% url 'update_one' blog.id %}" style="color: blue;">Edit</a>
+        </div>
+        <div class="post">
+            <h3>{{ blog.title }}</h3>
+            <p>{{ blog.content }}</p>
+            <small>Posted on: {{ blog.created_at }}</small>
+        </div>
+    {% empty %}
+        <p>No posts yet. Be the first to write something!</p>
+    {% endfor %}
+
+</body>
+</html>
